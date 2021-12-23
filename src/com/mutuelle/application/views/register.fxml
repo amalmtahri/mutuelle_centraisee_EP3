@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mutuelle.application.views.RegisterController">
+   <children>
+      <TabPane prefHeight="420.0" prefWidth="735.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Add Client">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="735.0">
+                     <children>
+                        <Pane layoutX="-2.0" prefHeight="393.0" prefWidth="742.0" style="-fx-background-color: #0F4174;">
+                           <children>
+                              <Circle fill="#2e5986" layoutX="151.0" layoutY="318.0" radius="183.0" stroke="#2e5986" strokeType="INSIDE" />
+                              <Circle fill="#1565b6" layoutX="473.0" layoutY="63.0" radius="128.0" stroke="#1565b6" strokeType="INSIDE" />
+                              <AnchorPane layoutX="31.0" layoutY="25.0" prefHeight="344.0" prefWidth="677.0" style="-fx-background-color: white; -fx-border-radius: 5px;">
+                                 <children>
+                                    <Label layoutX="22.0" layoutY="13.0" text="Add New Client">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="numeroBadge" layoutX="22.0" layoutY="79.0" promptText="Numero de Badge" style="-fx-background-color: transparant; -fx-border-color: #0F4174; -fx-border-width: 0px 0px 2px 0px;" />
+                                    <Label layoutX="22.0" layoutY="52.0" text="Numero de Badge :" />
+                                    <TextField fx:id="nomEntreprise" layoutX="264.0" layoutY="79.0" promptText="Nom de l'entreprise" style="-fx-background-color: transparant; -fx-border-color: #0F4174; -fx-border-width: 0px 0px 2px 0px;" />
+                                    <Label layoutX="264.0" layoutY="52.0" text="Nom de l'entreprise :" />
+                                    <Label layoutX="494.0" layoutY="52.0" text="Date debut travail  :" />
+                                    <DatePicker fx:id="dateDebutTravail" layoutX="494.0" layoutY="80.0" prefHeight="25.0" prefWidth="161.0" promptText="Date de debut de travail" style="-fx-background-color: transparant; -fx-border-color: #0F4174; -fx-border-width: 0px 0px 2px 0px;" />
+                                    <TextField fx:id="prenomClient" layoutX="22.0" layoutY="158.0" promptText="Prenom de client" style="-fx-background-color: transparant; -fx-border-color: #0F4174; -fx-border-width: 0px 0px 2px 0px;" />
+                                    <Label layoutX="22.0" layoutY="131.0" text="Prenom de Client :" />
+                                    <TextField fx:id="nomClient" layoutX="264.0" layoutY="158.0" promptText="Nom de client" style="-fx-background-color: transparant; -fx-border-color: #0F4174; -fx-border-width: 0px 0px 2px 0px;" />
+                                    <Label layoutX="264.0" layoutY="131.0" text="Nom de Client :" />
+                                    <TextField fx:id="telephone" layoutX="494.0" layoutY="158.0" prefHeight="27.0" prefWidth="107.0" promptText="Tele" style="-fx-background-color: transparant; -fx-border-color: #0F4174; -fx-border-width: 0px 0px 2px 0px;" />
+                                    <Label layoutX="494.0" layoutY="131.0" text="Téléphone  :" />
+                                    <ComboBox fx:id="choisePhone" layoutX="606.0" layoutY="158.0" prefHeight="25.0" prefWidth="52.0" promptText="Code Pays" style="-fx-background-color: transparant; -fx-border-color: #0F4174; -fx-border-width: 0px 0px 2px 0px;" />
+                                    <TextField fx:id="adresse" layoutX="22.0" layoutY="239.0" promptText="Addresse" style="-fx-background-color: transparant; -fx-border-color: #0F4174; -fx-border-width: 0px 0px 2px 0px;" />
+                                    <Label layoutX="22.0" layoutY="212.0" text="Addresse :" />
+                                    <TextField fx:id="email" layoutX="264.0" layoutY="239.0" promptText="Email" style="-fx-background-color: transparant; -fx-border-color: #0F4174; -fx-border-width: 0px 0px 2px 0px;" />
+                                    <Label layoutX="264.0" layoutY="212.0" text="Email :" />
+                                    <RadioButton layoutX="494.0" layoutY="212.0" mnemonicParsing="false" onAction="#passIdentite" text="Passport">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="identiteClient" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton layoutX="598.0" layoutY="212.0" mnemonicParsing="false" onAction="#cinIdentite" text="Cin" toggleGroup="$identiteClient" />
+                                    <TextField fx:id="cin" layoutX="494.0" layoutY="241.0" style="-fx-background-color: transparant; -fx-border-color: #0F4174; -fx-border-width: 0px 0px 2px 0px;" visible="false" />
+                                    <Label fx:id="errorNumeroBadge" layoutX="22.0" layoutY="110.0" textFill="RED" />
+                                    <Label fx:id="errorNomEntreprise" layoutX="264.0" layoutY="110.0" textFill="RED" />
+                                    <Label fx:id="errorNomClient" layoutX="264.0" layoutY="189.0" textFill="RED" />
+                                    <Label fx:id="errorPrenomClient" layoutX="22.0" layoutY="189.0" textFill="RED" />
+                                    <Label fx:id="errorTelephone" layoutX="494.0" layoutY="189.0" textFill="RED" />
+                                    <Label fx:id="errorEmail" layoutX="264.0" layoutY="273.0" textFill="RED" />
+                                    <Label fx:id="errorCIN" layoutX="494.0" layoutY="273.0" textFill="RED" />
+                                    <Label fx:id="verifChamps" layoutX="494.0" layoutY="313.0" textFill="RED" />
+                                    <Button layoutX="284.0" layoutY="290.0" mnemonicParsing="false" onAction="#registerButton" prefHeight="31.0" prefWidth="126.0" style="-fx-background-color: #0F4174;" text="Enregistrer" textFill="WHITE">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="User Data">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableClientList" layoutY="59.0" prefHeight="333.0" prefWidth="735.0">
+                          <columns>
+                            <TableColumn fx:id="badge" prefWidth="75.0" text="N° badge de travail" />
+                            <TableColumn fx:id="entrepriseName" prefWidth="75.0" text="Nom de l'entreprise" />
+                              <TableColumn fx:id="prenom" prefWidth="75.0" text="Prenom de Client" />
+                              <TableColumn fx:id="nom" prefWidth="75.0" text="Nom de Client" />
+                              <TableColumn fx:id="tele" prefWidth="75.0" text="Téléphone" />
+                              <TableColumn fx:id="identite" prefWidth="75.0" text="Identité" />
+                              <TableColumn fx:id="adresseClient" prefWidth="75.0" text="Adresse" />
+                              <TableColumn fx:id="emailClient" prefWidth="98.3333740234375" text="Email" />
+                              <TableColumn fx:id="dateTravail" prefWidth="109.6666259765625" text="Date Debut de Travail" />
+                          </columns>
+                        </TableView>
+                        <ComboBox fx:id="nameCompany" layoutX="210.0" layoutY="20.0" onAction="#filtreWithCompany" prefHeight="30.0" prefWidth="162.0" style="-fx-background-color: transparant; -fx-border-color: #0F4174;" />
+                        <Label layoutX="14.0" layoutY="30.0" text="Filtrage avec nom de l'entreprise :" />
+                        <Label layoutX="440.0" layoutY="27.0" text="Recherche :" />
+                        <TextField fx:id="filtre" layoutX="526.0" layoutY="19.0" onAction="#filtreWithString" prefHeight="29.0" prefWidth="192.0" promptText="Recherche avec nom,prenom,cin,email" style="-fx-background-color: transparant; -fx-border-color: #0F4174;" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Statistique">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BarChart fx:id="barChart" layoutX="85.0" layoutY="16.0" prefHeight="359.0" prefWidth="565.0" title="Nombre des clients pour chaque date">
+                          <xAxis>
+                            <CategoryAxis label="Date de l'inscription" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis label="Nombre des clients" side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <Circle fill="#0f4174" layoutX="695.0" layoutY="349.0" radius="26.0" stroke="WHITE" strokeType="INSIDE" />
+                        <Button layoutX="676.0" layoutY="334.0" mnemonicParsing="false" onAction="#logout" prefHeight="29.0" prefWidth="37.0" style="-fx-background-color: #0F4174;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fitHeight="19.0" fitWidth="22.0" layoutX="687.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/logout.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
