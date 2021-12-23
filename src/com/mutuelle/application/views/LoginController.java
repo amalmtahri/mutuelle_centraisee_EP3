@@ -20,11 +20,15 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import org.apache.log4j.Logger;
 
 
 
 
 public class LoginController{
+	
+	  static final Logger log = Logger.getLogger(LoginController.class.getName());
+
     @FXML
     private Button cancelButton;
     @FXML
@@ -117,6 +121,7 @@ public class LoginController{
 				loginMessageError.setText("Please enter correct Email and Password!");
 
 			} else {
+				log.info("Email: "+emailOfficer.getText()+"" );
 				messageLogin.setText("Success!");
 				emailOfficer.setText("");
 				passwordOfficer.setText("");

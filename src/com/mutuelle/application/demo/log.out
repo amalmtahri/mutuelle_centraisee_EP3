@@ -5,3 +5,11 @@
 2021-12-23 17:13:37 INFO  Log4jDemo:10 - errrr
 2021-12-23 17:59:29 INFO  Log4jDemo:11 - errrr
 2021-12-23 18:01:02 INFO  Log4jDemo:11 - errrr
+2021-12-23 18:08:09 INFO  Log4jDemo:11 - errrr
+2021-12-23 18:20:25 INFO  Log4jDemo:11 - errrr
+2021-12-23 18:21:35 INFO  LoginController:127 - Email:
+2021-12-23 18:21:36 INFO  RegisterController:318 - hello
+2021-12-23 18:24:38 INFO  LoginController:124 - Email:amal@gmail.com
+2021-12-23 18:24:38 INFO  RegisterController:318 - hello
+2021-12-23 18:25:39 INFO  LoginController:124 - Email: amal@gmail.com
+2021-12-23 18:25:40 INFO  RegisterController:318 - hello
