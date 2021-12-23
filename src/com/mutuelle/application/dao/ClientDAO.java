@@ -62,7 +62,7 @@ public class ClientDAO implements ClientDAOInterface{
 		  	  		alert.setContentText("Client Sera ajouter!");
 		  	  		alert.showAndWait();
 		  	  		//envoi email au client
-		  	  		MaileSend.send("mutuellecentralisee@gmail.com", "mutuelle123",client.getEmail(), "Mutuelle Centralisee", "<h1>Bonjour </h1> "+ client.getFirstname() + ",\n Votre Inscription a été bien enregistrer");
+		  	  		MaileSend.send("mutuellecentralisee@gmail.com", "mutuelle123",client.getEmail(), "Mutuelle Centralisee", "Bonjour "+ client.getFirstname() + ",\n Votre Inscription a été bien enregistrer");
 	  	        }  
 	  	        catch(SQLException e) {
 	  	            e.printStackTrace();
