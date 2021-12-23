@@ -66,51 +66,6 @@ public class LoginController{
         Platform.exit();
     }
     public void validateLogin(ActionEvent event) throws IOException{
-    	/*passwordInvalid.setText("");
-    	emailInvalid.setText("");
-    	loginMessageError.setText("");
-    	 if(emailOfficer.getText().isBlank() == false && passwordOfficer.getText().isBlank() == false) {
-             //validateLogin();
-
-    	        OfficerImpl officerimpl = new OfficerImpl();
-
-    	    	   ObjectMapper objectMapper = new ObjectMapper();
-    	           try {
-    	                 InputStream inputStream = new FileInputStream(new File("C:\\Users\\adm\\Desktop\\brief3\\src\\main\\java\\com\\app\\data.json"));
-    	                 TypeReference<List<Officer>> typeReference = new TypeReference<List<Officer>>() {};
-    	                 List<Officer> Officers = objectMapper.readValue(inputStream, typeReference);
-    	                int index =  officerimpl.verifEmail(this.emailOfficer.getText().toString(), Officers);
-    	                if(index == -1) {
-    	                	emailInvalid.setText("Email Invalid");
-    	                }
-    	                if(index !=-1) {
-    		               boolean result =  officerimpl.verifPassword(this.passwordOfficer.getText().toString(), index, Officers);
-
-    		                if(result) {
-    		                	messageLogin.setText("Success!");
-    		                	emailOfficer.setText("");
-    		                	passwordOfficer.setText("");
-    		                	  Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
-    		                      stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    		                      scene = new Scene(root);
-    		                      stage.setScene(scene);
-    		                      stage.show();
-    		                }
-    		                else {
-    		                	passwordInvalid.setText("Password invalid");
-    		                }
-    	                }
-    	             }catch(FileNotFoundException e) {
-    	                 e.printStackTrace();
-    	             } catch (IOException e) {
-    	                 // TODO Auto-generated catch block
-    	                 e.printStackTrace();
-    	             }
-         }else{
-             loginMessageError.setText("Please enter your email and password");
-
-         }*/
-
 
 		if(emailOfficer.getText().isBlank() == false && passwordOfficer.getText().isBlank() == false) {
 
@@ -119,9 +74,11 @@ public class LoginController{
 
 			if (!flag) {
 				loginMessageError.setText("Please enter correct Email and Password!");
+				log.error("Password ou email est incorrect");
 
 			} else {
-				log.info("Email: "+emailOfficer.getText()+"" );
+				
+				log.info("Les données du l’utilisateur authentifié: \nEmail: "+emailOfficer.getText()+"" );
 				messageLogin.setText("Success!");
 				emailOfficer.setText("");
 				passwordOfficer.setText("");

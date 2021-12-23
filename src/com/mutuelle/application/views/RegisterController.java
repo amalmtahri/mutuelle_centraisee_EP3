@@ -23,7 +23,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mutuelle.application.Impl.ClientImpl;
 import com.mutuelle.application.dao.ClientDAO;
 import com.mutuelle.application.dao.OfficerDAO;
-import com.mutuelle.application.demo.Log4jDemo;
 import com.mutuelle.application.models.Client;
 import com.mutuelle.application.models.CodePays;
 
@@ -172,6 +171,7 @@ public class RegisterController implements Initializable {
 		int compErr=0;
 		if(numeroBadge.getText().isBlank() == true || nomEntreprise.getText().isBlank() == true || prenomClient.getText().isBlank() == true || nomClient.getText().isBlank() == true || telephone.getText().isBlank() == true || cin.getText().isBlank() == true || adresse.getText().isBlank() == true || email.getText().isBlank() == true || dateDebutTravail.getValue().toString().isBlank() == true) {
 			verifChamps.setText("Svp remplire tous les champs");
+			log.error("Un ou plusieurs champs est vide !");
 			compErr++;
 		}
 		if(!(numeroBadge.getText().length() <= 10 )) {
@@ -208,14 +208,17 @@ public class RegisterController implements Initializable {
 		if(filledCin && !cin.getText().matches("[a-zA-Z]{2}\\d{6}") && !cin.getText().isBlank()) {
 			compErr++;
 			errorCIN.setText("the cin must be 2 numbers and 6 L");
+			log.error("the cin must be 2 numbers and 6 L");
 		}
 		if(!filledCin && !cin.getText().matches("[a-zA-Z]{2}\\d{7}") && !cin.getText().isBlank()) {
 			compErr++;
 			errorCIN.setText("the Passport must be 2 numbers and 7 L");
+			log.error("the Passport must be 2 numbers and 7 L");
 		}
 		if(!email.getText().matches("^(.+)@(.+)$") && !email.getText().isBlank()) {
 			compErr++;
 			errorEmail.setText("format invalide");
+			log.error("Format email invalide");
 		}
 
 		if(compErr==0)
@@ -315,7 +318,7 @@ public class RegisterController implements Initializable {
 		buildData();
 		loadpayscodes();
 		statistique();
-		log.info("hello");
+		log.info("Welcome to Mutuelle Centralisee");
 	}
 	
 	
@@ -348,6 +351,7 @@ public class RegisterController implements Initializable {
 		emailClient.setCellValueFactory(new PropertyValueFactory<Client, String>("email"));
 		dateTravail.setCellValueFactory(new PropertyValueFactory<Client, String>("dateDebut"));
 		tableClientList.setItems(clientDAO.filtre(filtre.getText().trim()));
+		
 	}
 
 	
