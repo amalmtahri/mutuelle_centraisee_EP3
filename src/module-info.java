@@ -11,8 +11,10 @@ module MutuelleCenta {
 	requires bcrypt;
 	requires com.hierynomus.sshj;
 	
-	requires java.logging;
+	//requires java.logging;
 	requires java.mail;
+	requires java.logging;
+	requires log4j;
 	
 	
 	opens com.mutuelle.application to javafx.graphics, javafx.fxml;

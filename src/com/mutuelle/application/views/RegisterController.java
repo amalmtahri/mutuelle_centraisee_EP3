@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.logging.Logger;
 
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -22,6 +23,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mutuelle.application.Impl.ClientImpl;
 import com.mutuelle.application.dao.ClientDAO;
 import com.mutuelle.application.dao.OfficerDAO;
+import com.mutuelle.application.demo.Log4jDemo;
 import com.mutuelle.application.models.Client;
 import com.mutuelle.application.models.CodePays;
 
@@ -53,6 +55,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class RegisterController implements Initializable {
+	
+	
+	  static final Logger log = Logger.getLogger(RegisterController.class.getName());
+
 	@FXML
 	private Button registerClick;
 	@FXML
@@ -309,6 +315,7 @@ public class RegisterController implements Initializable {
 		buildData();
 		loadpayscodes();
 		statistique();
+		log.info("hello");
 	}
 	
 	
