@@ -46,3 +46,13 @@ Email: amal@gmail.com
 2021-12-23 21:17:36 INFO  LoginController:81 - Les données du l’utilisateur authentifié: 
 Email: amal@gmail.com
 2021-12-23 21:17:37 INFO  RegisterController:321 - Welcome to Mutuelle Centralisee
+2021-12-23 21:25:52 INFO  LoginController:81 - Les données du l’utilisateur authentifié: 
+Email: amal@gmail.com
+2021-12-23 21:25:53 INFO  RegisterController:321 - Welcome to Mutuelle Centralisee
+2021-12-23 21:41:15 INFO  LoginController:81 - Les données du l’utilisateur authentifié: 
+Email: amal@gmail.com
+2021-12-23 21:41:17 INFO  RegisterController:321 - Welcome to Mutuelle Centralisee
+2021-12-24 00:35:32 INFO  LoginController:82 - Les données du l’utilisateur authentifié: 
+Email: amal@gmail.com
+2021-12-24 00:35:33 INFO  RegisterController:321 - Welcome to Mutuelle Centralisee
+2021-12-24 00:36:02 ERROR RegisterController:174 - Un ou plusieurs champs est vide !

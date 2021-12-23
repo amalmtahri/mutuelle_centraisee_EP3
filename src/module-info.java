@@ -16,7 +16,6 @@ module MutuelleCenta {
 	requires java.logging;
 	requires log4j;
 	
-	
 	opens com.mutuelle.application to javafx.graphics, javafx.fxml;
 	
 	opens com.mutuelle.application.views to javafx.graphics, javafx.fxml;
